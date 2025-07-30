@@ -1,0 +1,144 @@
+/* === ESTILOS GENERALES DE SECCIONES === */
+body{
+margin: 0;
+padding: 0;
+ background-color: #ffffff;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  text-align: center;
+  min-height: 50vh;
+}
+
+.contenido {
+  width: 100%;
+}
+
+/* === SECCIÓN NOMBRES Y PORTADA === */
+.nombresTexto {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.imagen-portada {
+  height: 80vh;
+  width: auto;
+}
+
+/* === FLECHA SCROLL === */
+.flecha-container {
+  height: 20vh;
+  display: flex;
+  flex-direction: column; /* Organiza verticalmente */
+  justify-content: center;
+  align-items: center;
+  background: #fffafc;
+  text-align: center;
+}
+
+
+.flecha-container a {
+  font-size: 3rem;
+  text-decoration: none;
+  animation: bounce 1.5s infinite;
+  color: #000000;
+  margin-top: 0.5rem;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+
+/* === CONTADOR DE DÍAS === */
+#contador {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #d94f80;
+}
+
+/* === ICONOS === */
+.iconos {
+  width: 3rem;
+}
+
+.salon {
+  width: 6rem;
+}
+
+/* === CARRUSEL DE FOTOS === */
+.carrusel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: nowrap;
+}
+
+.foto-activa {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.boton-carrusel {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.boton-carrusel:hover {
+  color: #888;
+}
+
+#imagen-carrusel {
+  width: 8rem;
+}
+
+/* === COLORES DE FONDO POR SECCIÓN === */
+#nombresTexto {
+  background-color: #fffafc;
+}
+
+#dia {
+  background-color: #fef3f8;
+}
+
+#ceremonia {
+  background-color: #fce4ec;
+}
+
+#recepcion {
+  background-color: #f3e5f5;
+}
+
+#ubicacion {
+  background-color: #e3f2fd;
+}
+
+#historia {
+  background-color: #ede7f6;
+}
+
+#dresscode {
+  background-color: #f1f8e9;
+}
+
+#regalos {
+  background-color: #fffde7;
+}
+
+#confirmacion {
+  background-color: #e0f7fa;
+}

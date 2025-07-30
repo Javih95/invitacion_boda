@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Tu invitación</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <img src="./imagenes/fondo_index.jpg" alt="Fondo del index">
+    <div class="container" id="contenido"></div>
+    <script>
+        const data = JSON.parse(localStorage.getItem("invitado"));
+        const container = document.getElementById("contenido");
+        if (data) {
+            container.innerHTML = `
+        <h1>¡Hola ${data.nombre}!</h1>
+        <p>Nos alegra contar con vos en nuestra boda.</p>
+        <p><strong>Tu mesa asignada es la N° ${data.mesa}</strong></p>
+        <a class= "falsoBoton" href="invitacion.html">ver invitacion</a>
+      `;
+        } else {
+            container.innerHTML = `<p>No se encontró tu información. Volvé a la <a href="index.html">página principal</a>.</p>`;
+        }
+    </script>
+</body>
+
+</html>
