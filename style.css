@@ -29,7 +29,7 @@ body {
   position: relative;
   z-index: 1;
   height: 40%;
-  width: auto;
+  width:40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,7 +60,7 @@ button {
 }
 .falsoBoton {
   display: inline-block;
-  background-color:  rgba(232, 210, 201, 0.655);
+  background-color:  rgb(232, 210, 201);
   color: #ffffff;
   margin: 10px;
   padding: 10px;
@@ -73,5 +73,6 @@ button {
 @media (max-width: 600px) {
   .container {
     width: 80%;
+    height: 50%;
   }
 }

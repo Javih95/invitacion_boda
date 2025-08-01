@@ -1,15 +1,12 @@
-/* === ESTILOS GENERALES DE SECCIONES === */
-body{
-margin: 0;
-padding: 0;
- background-color: #ffffff;
+body {
+  background-color: #ffffff;
 }
+
 section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1rem;
   text-align: center;
   min-height: 50vh;
 }
@@ -18,7 +15,7 @@ section {
   width: 100%;
 }
 
-/* === SECCIÓN NOMBRES Y PORTADA === */
+
 .nombresTexto {
   height: 100vh;
   display: flex;
@@ -31,17 +28,20 @@ section {
   width: auto;
 }
 
-/* === FLECHA SCROLL === */
 .flecha-container {
   height: 20vh;
   display: flex;
-  flex-direction: column; /* Organiza verticalmente */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #fffafc;
+  background: #ffffff;
   text-align: center;
 }
 
+.flecha-container h1 {
+  margin: 0;
+  padding: 0.5rem 0;
+}
 
 .flecha-container a {
   font-size: 3rem;
@@ -51,29 +51,68 @@ section {
   margin-top: 0.5rem;
 }
 
+.flecha-container .iconos {
+  rotate: 180deg;
+}
+
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
 }
 
 
 /* === CONTADOR DE DÍAS === */
 #contador {
   margin-top: 10px;
-  font-size: 1.2rem;
-  color: #d94f80;
+  font-size: 1rem;
 }
 
-/* === ICONOS === */
+.contador-digital {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Courier New', monospace;
+  margin-top: 1rem;
+}
+
+.unidad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  min-width: 30px;
+}
+
+.numero {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.texto {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.2rem;
+}
+
+.separador {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
 .iconos {
   width: 3rem;
 }
 
-.salon {
-  width: 6rem;
-}
-
-/* === CARRUSEL DE FOTOS === */
 .carrusel {
   display: flex;
   align-items: center;
@@ -106,39 +145,98 @@ section {
   width: 8rem;
 }
 
-/* === COLORES DE FONDO POR SECCIÓN === */
+.galeria {
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: #fdfdfd;
+}
+
+.grid-fotos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.grid-fotos img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#fiesta .iconos {
+  width: 4rem;
+}
+
+.falsoBoton {
+  display: inline-block;
+  background-color: rgba(232, 210, 201, 0.655);
+  color: #ffffff;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+#fotoFinal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.foto-Final {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+
 #nombresTexto {
-  background-color: #fffafc;
+  background-color: #ffffff;
 }
-
+#frase {
+  background-color: #e8d2c9;
+}
 #dia {
-  background-color: #fef3f8;
+  background-color: #ffffff;
 }
-
 #ceremonia {
-  background-color: #fce4ec;
+  background-color: #f2e3de;
 }
-
 #recepcion {
-  background-color: #f3e5f5;
+  background-color: #f4e8e2;
 }
-
 #ubicacion {
-  background-color: #e3f2fd;
+  background-color: #f2e3de;
 }
-
 #historia {
-  background-color: #ede7f6;
+  background-color: #ffffff;
 }
-
 #dresscode {
-  background-color: #f1f8e9;
+  background-color: #f2e3de;
 }
-
 #regalos {
-  background-color: #fffde7;
+  background-color: #f4e8e2;
 }
-
 #confirmacion {
-  background-color: #e0f7fa;
+  background-color: #f2e3de;
 }

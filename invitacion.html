@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Información de la boda</title>
     <link rel="stylesheet" href="invitacion.css" />
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('w2N5IkWy2lpT_INmD')
+    </script>
 </head>
 
 <body>
@@ -16,19 +19,21 @@
             <img src="./imagenes/CamilayMatiasTexto.png" alt="foto matias y camila en texto" class="imagen-portada">
             <div class="flecha-container">
                 <h1>Nuestra boda</h1>
-                <a href="#dia" class="flecha-scroll">⬇</a>
+                <a href="#dia" class="flecha-scroll">
+                    <img src="imagenes/flecha-abajo.svg" alt="flecha abajo svg" class="iconos">
+                </a>
             </div>
         </section>
 
-        <section>
+        <section id="frase">
             <h2>.....insertar frase......</h2>
         </section>
 
-
         <section id="dia">
-            <h2>Te esperamos el dia</h2>
+            <h2>Te esperamos el día</h2>
             <h3>11 de octubre</h3>
-            <div id="contador"></div>
+            <h3>faltan:</h3>
+            <div id="contador" class="contador-digital"></div>
         </section>
 
         <section id="ceremonia">
@@ -39,19 +44,17 @@
 
         <section id="recepcion">
             <img src="./imagenes/brindis-svg.svg" alt="Icono brindis" class="iconos" />
-            <h2>Recepción</h2>
-            <p>La recepción será a partir de las 20:00 hs en el salón "Luna Eventos".</p>
+            <h2>Celebración</h2>
+            <p>Despues de la ceremonia festejaremos en el Salón de eventos New Angie</p>
         </section>
 
         <section id="ubicacion">
             <img src="./imagenes/point-on-map-broken.svg" alt="icono de mapa" class="iconos" />
             <h2>Ubicación</h2>
-            <img src="./imagenes/brindis-svg.svg" alt="foto del salon" class="salon" />
             <p>Dirección: Av. Principal 1234, Buenos Aires.</p>
         </section>
 
         <section id="historia">
-            <img src="./imagenes/gift.svg" alt="Icono regalo" class="iconos" />
             <h2>Nuestra Historia</h2>
             <div id="carrusel" class="carrusel">
                 <button id="prev" class="boton-carrusel">⬅</button>
@@ -62,37 +65,93 @@
         </section>
 
         <section id="dresscode">
-            <img src="./imagenes/vestido-svg.svg" alt="icono de vestido" class="iconos" />
-            <img src="./imagenes/traje-svg.svg" alt="icono de traje" class="iconos" />
-            <h2>Dress Code</h2>
-            <p>Formal elegante. Sugerimos colores claros y cómodos para disfrutar la noche.</p>
+            <div class="iconos-container">
+                <img src="./imagenes/vestido-svg.svg" alt="icono de vestido" class="iconos" />
+                <img src="./imagenes/traje-svg.svg" alt="icono de traje" class="iconos" />
+            </div>
+            <h2>Nuestra historia se viste de gala/elegante sport!</h2>
+            <p>Y tú tambien!!</p>
         </section>
 
         <section id="regalos">
             <img src="./imagenes/gift.svg" alt="Icono regalo" class="iconos" />
             <h2>Regalos</h2>
-            <p>Si deseas hacernos un regalo,ademas de tu hermosa presencia .</p>
+            <p>Tu presencia es nuestro mejor regalo.</p>
+        </section>
+
+        <section id="galeria" class="galeria">
+            <div class="grid-fotos">
+                <img src="./imagenes/fondo_index.jpg" alt="Foto 1" />
+                <img src="./imagenes/fondo_index.jpg" alt="Foto 2" />
+                <img src="./imagenes/fondo_index.jpg" alt="Foto 3" />
+                <img src="./imagenes/fondo_index.jpg" alt="Foto 4" />
+                <img src="./imagenes/fondo_index.jpg" alt="Foto 5" />
+                <img src="./imagenes/fondo_index.jpg" alt="Foto 6" />
+            </div>
+        </section>
+
+        <section id="fiesta">
+            <img src="./imagenes/bola-disco.webp" alt="Icono bola disco" class="iconos" />
+            <h2>¡La fiesta está en marcha!</h2>
+            <p>Será una ocasión para relajarnos y <br> disfrutar juntos,en un ambiente solo para <br> adultos.</p>
         </section>
 
         <section id="confirmacion">
+            <img src="./imagenes/confirmacion-svg.svg" alt="Icono de confirmacion" class="iconos" />
             <h2>Confirmación de asistencia</h2>
-            <p>Por favor confirmá tu asistencia antes del 1 de diciembre al 11-5555-1234 o por este <a
-                    href="https://wa.me/541155551234" target="_blank">WhatsApp</a>.</p>
+            <p>Por favor confirmá tu asistencia antes del 1 de diciembre</p>
+            <div>
+                <form id="form">
+                    <div class="field">
+                        <label for="user_name">Invitado/s</label>
+                        <input type="text" name="user_name" id="user_name" readonly>
+                    </div>
+                    <div class="field">
+                        <label for="user_mesa">Mesa</label>
+                        <input type="text" name="user_mesa" id="user_mesa" readonly>
+                    </div>
+                    <div class="field">
+                        <label for="message">Dejá un mensaje a la pareja:</label>
+                        <input type="text" name="message" id="message">
+                    </div>
+                    <input type="submit" id="button" value="Confirmar">
+                </form>
+            </div>
         </section>
 
-        <section id="regalos">
-            <h2>Regalos</h2>
-            <p>Tu presencia es nuestro mejor regalo. Pero si querés colaborar, acá te dejamos nuestro alias:
-                <strong>boda.matiasycamila</strong>
-            </p>
+        <section id="drive">
+            <img src="./imagenes/camera.svg" alt="Icono camara de fotos" class="iconos" />
+            <h2>¡Revive la magia de nuestro gran día!</h2>
+            <p>Comparte tus fotos <br> en nuestro álbum de Google Drive</p>
+            <a href="https://drive.google.com/drive/folders/11lZ51iN13JgP-WFxPMLavHWQl0BzzDIJ?usp=drive_link" class="falsoBoton">Subir fotos</a>
         </section>
+
+         <section id="fotoFinal">
+            <img src="./imagenes/fondo_index.jpg" alt="foto matias y camila" class="foto-Final">
+        </section>
+        
+        <section>
+            <h2>.....insertar frase......</h2>
+        </section>
+
     </main>
 
-    <footer class="site-footer">
-        <p>Gracias por acompañarnos en este momento tan especial 💖</p>
+    <footer class="footer">
+        <p>💖 web desarrollada por <a href="https://github.com/Javih95/">JaviH</a></p>
+        <a href="https://lordicon.com/">Animated icons by Lordicon.com</a>
     </footer>
 </body>
 <script src="contador.js"></script>
 <script src="carrusel.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const invitado = JSON.parse(localStorage.getItem("invitado"));
+        if (invitado && invitado.nombre) {
+            document.getElementById("user_name").value = invitado.nombre;
+             document.getElementById("user_mesa").value = invitado.mesa;
+        }
+    });
+</script>
+<script src="contacto.js"></script>
 
 </html>
