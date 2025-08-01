@@ -8,17 +8,18 @@
 </head>
 
 <body>
-    <img src="./imagenes/fondo_index.jpg" alt="Fondo del index">
     <div class="container" id="contenido"></div>
     <script>
         const data = JSON.parse(localStorage.getItem("invitado"));
         const container = document.getElementById("contenido");
         if (data) {
             container.innerHTML = `
-        <h1>¡Hola ${data.nombre}!</h1>
-        <p>Nos alegra contar con vos en nuestra boda.</p>
+        <h1>${data.nombre}</h1>
+        <p>¡Esperamos que puedan compartir </p>
+        <p>esta fiesta con nosotros!</p>
+        <p> N° de invitados: </p>
         <p><strong>Tu mesa asignada es la N° ${data.mesa}</strong></p>
-        <a class= "falsoBoton" href="invitacion.html">ver invitacion</a>
+        <a class= "falsoBoton" href="invitacion.html">Abrir invitacion</a>
       `;
         } else {
             container.innerHTML = `<p>No se encontró tu información. Volvé a la <a href="index.html">página principal</a>.</p>`;
