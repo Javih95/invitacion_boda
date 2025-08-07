@@ -12,18 +12,16 @@ body, html {
 body {
   position: relative;
   overflow: hidden;
+  display: flex;
   justify-content: center;
   align-items: center; 
-  background-image: url('./imagenes/fondo_index.jpg');
-  background-size: cover;
+  background-image: url('./imagenes/pareja/fotoIndexHorizonal.png');
+  background-size: cover;   
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
 }
+
 
 .container {
   position: relative;
@@ -74,5 +72,12 @@ button {
   .container {
     width: 80%;
     height: 50%;
+  }
+  body{
+      background-image: url('./imagenes/pareja/fotoindex.jpeg');
+        background-size: cover;  
+          background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
   }
 }

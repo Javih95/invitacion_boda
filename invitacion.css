@@ -1,5 +1,8 @@
 body {
   background-color: #ffffff;
+
+  margin: 0;
+  overflow-x: hidden; /* asegura que nada cause scroll lateral */
 }
 
 section {
@@ -26,7 +29,11 @@ section {
 .imagen-portada {
   height: 80vh;
   width: auto;
+  max-width: 100vw; /* <-- límite al ancho */
+  display: block;   /* <-- evita espacios si es inline */
+  margin: 0 auto;   /* <-- centra si hay espacio horizontal */
 }
+
 
 .flecha-container {
   height: 20vh;
@@ -182,20 +189,24 @@ section {
   font-size: 1em;
   text-decoration: none;
 }
-
 #fotoFinal {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* oculta todo lo que se desborde */
 }
 
 .foto-Final {
-  max-width: 100%;
-  max-height: 100%;
-  height: auto;
+  max-width: 100vw; /* <-- clave para evitar scroll lateral */
+  max-height: 100vh;
   width: auto;
+  height: auto;
+  display: block;
 }
+
+
 .footer {
   display: flex;
   flex-direction: column;
