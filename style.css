@@ -26,18 +26,28 @@ body {
 .container {
   position: relative;
   z-index: 1;
-  height: 40%;
-  width:40%;
+  width: 40%;
+  max-width: 500px;   /* ancho máximo para que no se expanda demasiado */
+  min-width: 280px;   /* asegura que en pantallas muy chicas no se achique demasiado */
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+
   padding: 2rem;
   border-radius: 10px;
   background-color: rgba(232, 210, 201, 0.655);
   margin: 2rem auto;
+
+  /* El truco */
+  height: auto;         /* deja que crezca según contenido */
+  min-height: 40%;      /* que tenga un mínimo */
 }
+
+
+
 
 input, button {
   margin: 10px;
@@ -70,14 +80,18 @@ button {
 
 @media (max-width: 600px) {
   .container {
-    width: 80%;
-    height: 50%;
+    width: 90%;        /* más adaptable en móviles */
+    height: auto;      /* que se ajuste automáticamente */
+    padding: 1.5rem;
   }
-  body{
-      background-image: url('./imagenes/pareja/fotoindex.jpeg');
-        background-size: cover;  
-          background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+
+  input {
+    width: 100%;       /* ocupa todo el ancho del recuadro */
+    max-width: 250px;  /* pero no se va a infinito */
+  }
+
+  button {
+    width: 100%;
+    max-width: 250px;
   }
 }

@@ -26,7 +26,7 @@
         </section>
 
         <section id="frase">
-            <h2>.....insertar frase......</h2>
+            <h2>"Nos encontramos, nos elegimos y acá estamos: listos para dar el "Sí" con vos como testigo"</h2>
         </section>
 
         <section id="dia">
@@ -81,12 +81,12 @@
 
         <section id="galeria" class="galeria">
             <div class="grid-fotos">
-                <img src="./imagenes/fondo_index.jpg" alt="Foto 1" />
-                <img src="./imagenes/fondo_index.jpg" alt="Foto 2" />
-                <img src="./imagenes/fondo_index.jpg" alt="Foto 3" />
-                <img src="./imagenes/fondo_index.jpg" alt="Foto 4" />
-                <img src="./imagenes/fondo_index.jpg" alt="Foto 5" />
-                <img src="./imagenes/fondo_index.jpg" alt="Foto 6" />
+                <img src="./imagenes/pareja/g6.jpeg" alt="Foto 1" />
+                <img src="./imagenes/pareja/g2.jpeg" alt="Foto 2" />
+                <img src="./imagenes/pareja/g3.jpeg" alt="Foto 3" />
+                <img src="./imagenes/pareja/g4.jpeg" alt="Foto 4" />
+                <img src="./imagenes/pareja/g5.jpeg" alt="Foto 5" />
+                <img src="./imagenes/pareja/g1.jpeg" alt="Foto 6" />
             </div>
         </section>
 
@@ -130,16 +130,38 @@
             <img src="./imagenes/pareja/footer.jpeg" alt="foto matias y camila" class="foto-Final">
         </section>
         
-        <section>
-            <h2>.....insertar frase......</h2>
+        <section id="fraseFinal">
+            <h2>"¡Gracias por ser parte de este momento tan importante en nuestras vidas!"</h2>
         </section>
 
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <p>💖 web desarrollada por <a href="https://github.com/Javih95/">JaviH</a></p>
         <a href="https://lordicon.com/">Animated icons by Lordicon.com</a>
     </footer>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const secciones = document.querySelectorAll("section");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("aparece");
+        // 👉 Si querés que se repita al salir/entrar, sacá el siguiente "unobserve"
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 }); // Se activa cuando el 20% de la sección es visible
+
+  secciones.forEach((sec, i) => {
+    // Alternar derecha/izquierda automáticamente
+    sec.classList.add(i % 2 === 0 ? "derecha" : "izquierda");
+    observer.observe(sec);
+  });
+});
+</script>
+
 </body>
 <script src="contador.js"></script>
 <script src="carrusel.js"></script>

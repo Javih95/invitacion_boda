@@ -130,8 +130,9 @@ section {
 }
 
 .foto-activa {
-  max-width: 80%;
-  height: auto;
+  max-width: 70%;
+  height: 300px;
+  object-fit: cover;
   border-radius: 10px;
   transition: opacity 0.3s ease-in-out;
 }
@@ -148,9 +149,7 @@ section {
   color: #888;
 }
 
-#imagen-carrusel {
-  width: 8rem;
-}
+
 
 .galeria {
   padding: 2rem 1rem;
@@ -250,4 +249,39 @@ section {
 }
 #confirmacion {
   background-color: #f2e3de;
+}
+#fotoFinal{
+  background-color: #f4e8e2;
+}
+#fraseFinal{
+  background-color: #f4e8e2;
+}
+#footer {
+  background-color: #e8d2c9;
+  font-size: 0.8rem;
+  color: #555;
+  padding: 0.5rem;
+}
+/* Estado inicial (fuera de pantalla y oculto) */
+section {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Aparece desde la derecha */
+section.derecha {
+  transform: translateX(100px);
+}
+section.derecha.aparece {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Aparece desde la izquierda */
+section.izquierda {
+  transform: translateX(-100px);
+}
+section.izquierda.aparece {
+  opacity: 1;
+  transform: translateX(0);
 }

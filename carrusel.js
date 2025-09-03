@@ -1,7 +1,9 @@
 const fotos = [
-"./imagenes/fondo_index.jpg",
-"./imagenes/gift.svg",
-"./imagenes/vestido-svg.svg"
+"./imagenes/pareja/1.jpeg",
+"./imagenes/pareja/2.jpeg",
+"./imagenes/pareja/3.jpeg",
+"./imagenes/pareja/4.jpeg",
+"./imagenes/pareja/5.jpeg"
 ];
 
 let indice = 0;
