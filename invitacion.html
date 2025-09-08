@@ -26,7 +26,7 @@
         </section>
 
         <section id="frase">
-            <h2>"Nos encontramos, nos elegimos y acá estamos: listos para dar el "Sí" con vos como testigo"</h2>
+            <h2>"Queremos que seas parte de este día tan especial donde reafirmamos nuestro amor y nos acompañes en este hermoso momento."</h2>
         </section>
 
         <section id="dia">
@@ -35,23 +35,33 @@
             <h3>faltan:</h3>
             <div id="contador" class="contador-digital"></div>
         </section>
-
+        
         <section id="ceremonia">
             <img src="./imagenes/iglesia-svg.svg" alt="Icono iglesia" class="iconos" />
             <h2>Ceremonia</h2>
-            <p>17:00hs Parroquia Nuestra señora de Lujan</p>
+            <p>17:00hs Parroquia Nuestra señora de Lujan - Castelli 1680.</p>
         </section>
 
         <section id="recepcion">
             <img src="./imagenes/brindis-svg.svg" alt="Icono brindis" class="iconos" />
             <h2>Celebración</h2>
-            <p>Despues de la ceremonia festejaremos en el Salón de eventos New Angie</p>
+            <p>Despues de la ceremonia festejaremos en el Salón de eventos New Angie.</p>
         </section>
 
         <section id="ubicacion">
             <img src="./imagenes/point-on-map-broken.svg" alt="icono de mapa" class="iconos" />
             <h2>Ubicación</h2>
-            <p>Dirección: Av. Principal 1234, Buenos Aires.</p>
+            <p>Dirección:  Av.844 2037, San francisco solano.</p>
+        </section>
+        <section id="fiesta">
+            <img src="./imagenes/bus.svg" alt="Icono bus" class="iconos" />
+            <h2>Traslado</h2>
+            <p>Se pondran micros a disposicion para el traslado al salón  desde la Parroquia a las 20hs</p>
+        </section>
+         <section id="ceremonia-Civil">
+            <img src="./imagenes/register-book.svg" alt="Icono iglesia" class="iconos" />
+            <h2>Ceremonia Civil</h2>
+            <p>09 de Octubre - 08:00 hs -Registro civil de Lomas de zamora </p>
         </section>
 
         <section id="historia">
@@ -81,19 +91,13 @@
 
         <section id="galeria" class="galeria">
             <div class="grid-fotos">
-                <img src="./imagenes/pareja/g6.jpeg" alt="Foto 1" />
+                <img src="./imagenes/pareja/g3.jpeg" alt="Foto 1" />
                 <img src="./imagenes/pareja/g2.jpeg" alt="Foto 2" />
-                <img src="./imagenes/pareja/g3.jpeg" alt="Foto 3" />
+                <img src="./imagenes/pareja/g1.jpeg" alt="Foto 3" />
                 <img src="./imagenes/pareja/g4.jpeg" alt="Foto 4" />
                 <img src="./imagenes/pareja/g5.jpeg" alt="Foto 5" />
-                <img src="./imagenes/pareja/g1.jpeg" alt="Foto 6" />
+                <img src="./imagenes/pareja/g6.jpeg" alt="Foto 6" />
             </div>
-        </section>
-
-        <section id="fiesta">
-            <img src="./imagenes/bola-disco.webp" alt="Icono bola disco" class="iconos" />
-            <h2>¡La fiesta está en marcha!</h2>
-            <p>Será una ocasión para relajarnos y <br> disfrutar juntos,en un ambiente solo para <br> adultos.</p>
         </section>
 
         <section id="confirmacion">
@@ -107,29 +111,90 @@
                         <input type="text" name="user_name" id="user_name" readonly>
                     </div>
                     <div class="field">
-                        <label for="user_mesa">Mesa</label>
-                        <input type="text" name="user_mesa" id="user_mesa" readonly>
+                        <label for="user_name">Grupo</label>
+                        <input type="text" name="user_grupo" id="user_grupo" readonly>
                     </div>
+
                     <div class="field">
                         <label for="message">Dejá un mensaje a la pareja:</label>
                         <input type="text" name="message" id="message">
                     </div>
+
+                    <!-- Preferencias -->
+                    <div class="field">
+                        <h3>Como queremos que esta noche sea para vos te solicitamos:</h3>
+                        <p><strong>que indiques si tenés alguna preferencia alimenticia:</strong></p>
+
+                        <div>
+                            <input type="checkbox" id="sin_tac" name="preferencias[]" value="Sin TACC">
+                            <label for="sin_tac">Sin TACC</label>
+                            <input type="number" id="cant_sin_tac" name="cant_sin_tac" min="1" placeholder="Cantidad"
+                                disabled>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="vegetariano" name="preferencias[]" value="Vegetariano">
+                            <label for="vegetariano">Vegetariano</label>
+                            <input type="number" id="cant_vegetariano" name="cant_vegetariano" min="1"
+                                placeholder="Cantidad" disabled>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="bajo_lactosa" name="preferencias[]" value="Bajo Lactosa">
+                            <label for="bajo_lactosa">Bajo Lactosa</label>
+                            <input type="number" id="cant_bajo_lactosa" name="cant_bajo_lactosa" min="1"
+                                placeholder="Cantidad" disabled>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="vegano" name="preferencias[]" value="Vegano">
+                            <label for="vegano">Vegano</label>
+                            <input type="number" id="cant_vegano" name="cant_vegano" min="1" placeholder="Cantidad"
+                                disabled>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="ninguna" name="preferencias[]" value="Ninguna">
+                            <label for="ninguna">Ninguna</label>
+                        </div>
+
+                        <!-- Campo oculto para enviar preferencias y cantidades -->
+                        <input type="hidden" name="preferencias_cantidades" id="preferencias_cantidades">
+                    </div>
+
                     <input type="submit" id="button" value="Confirmar">
                 </form>
             </div>
         </section>
 
+
+        <script>
+            // Habilitar/deshabilitar inputs de cantidad
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    const inputNumber = checkbox.parentElement.querySelector('input[type="number"]');
+                    if (inputNumber) {
+                        inputNumber.disabled = !checkbox.checked;
+                        if (!checkbox.checked) inputNumber.value = "";
+                    }
+                });
+            });
+        </script>
+
+
+
         <section id="drive">
             <img src="./imagenes/camera.svg" alt="Icono camara de fotos" class="iconos" />
             <h2>¡Revive la magia de nuestro gran día!</h2>
             <p>Comparte tus fotos <br> en nuestro álbum de Google Drive</p>
-            <a href="https://drive.google.com/drive/folders/1SuiIQ54qG5hlYoiVxHjQ6JwUwc77KtO3?usp=drive_link" class="falsoBoton">Subir fotos</a>
+            <a href="https://drive.google.com/drive/folders/1SuiIQ54qG5hlYoiVxHjQ6JwUwc77KtO3?usp=drive_link"
+                class="falsoBoton">Subir fotos</a>
         </section>
 
-         <section id="fotoFinal">
+        <section id="fotoFinal">
             <img src="./imagenes/pareja/footer.jpeg" alt="foto matias y camila" class="foto-Final">
         </section>
-        
+
         <section id="fraseFinal">
             <h2>"¡Gracias por ser parte de este momento tan importante en nuestras vidas!"</h2>
         </section>
@@ -141,26 +206,26 @@
         <a href="https://lordicon.com/">Animated icons by Lordicon.com</a>
     </footer>
     <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const secciones = document.querySelectorAll("section");
+        document.addEventListener("DOMContentLoaded", () => {
+            const secciones = document.querySelectorAll("section");
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("aparece");
-        // 👉 Si querés que se repita al salir/entrar, sacá el siguiente "unobserve"
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 }); // Se activa cuando el 20% de la sección es visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("aparece");
+                        // 👉 Si querés que se repita al salir/entrar, sacá el siguiente "unobserve"
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 }); // Se activa cuando el 20% de la sección es visible
 
-  secciones.forEach((sec, i) => {
-    // Alternar derecha/izquierda automáticamente
-    sec.classList.add(i % 2 === 0 ? "derecha" : "izquierda");
-    observer.observe(sec);
-  });
-});
-</script>
+            secciones.forEach((sec, i) => {
+                // Alternar derecha/izquierda automáticamente
+                sec.classList.add(i % 2 === 0 ? "derecha" : "izquierda");
+                observer.observe(sec);
+            });
+        });
+    </script>
 
 </body>
 <script src="contador.js"></script>
@@ -170,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const invitado = JSON.parse(localStorage.getItem("invitado"));
         if (invitado && invitado.nombre) {
             document.getElementById("user_name").value = invitado.nombre;
-             document.getElementById("user_mesa").value = invitado.mesa;
+            document.getElementById("user_grupo").value = invitado.grupo;
         }
     });
 </script>
