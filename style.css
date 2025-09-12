@@ -1,3 +1,4 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +7,21 @@
 
 body, html {
   height: 100%;
-  font-family: sans-serif;
+  font-family: 'Playfair Display', serif;
+}
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3e2c2c;
 }
 
+p {
+  font-family: 'Montserrat', sans-serif;
+  color: #4a3b3b;
+}
+
+
+/* Fondo con imagen */
 body {
   position: relative;
   overflow: hidden;
@@ -22,14 +35,22 @@ body {
   min-height: 100vh;
 }
 
+/* Overlay oscuro para que el texto resalte */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.25); /* sombra ligera */
+  z-index: 0;
+}
 
 .container {
   position: relative;
   z-index: 1;
   width: 40%;
-  max-width: 500px;   /* ancho máximo para que no se expanda demasiado */
-  min-width: 280px;   /* asegura que en pantallas muy chicas no se achique demasiado */
-  
+  max-width: 500px;
+  min-width: 280px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,61 +58,59 @@ body {
   text-align: center;
 
   padding: 2rem;
-  border-radius: 10px;
-  background-color: rgba(232, 210, 201, 0.655);
+  border-radius: 12px;
+  background-color: rgba(232, 210, 201, 0.85); /* mismo en ambas páginas */
   margin: 2rem auto;
-
-  /* El truco */
-  height: auto;         /* deja que crezca según contenido */
-  min-height: 40%;      /* que tenga un mínimo */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* pequeño relieve */
 }
 
-
-
-
-input, button {
-  margin: 10px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-}
-
+/* Input */
 input {
   width: 200px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
 }
 
-button {
-  background-color: rgba(232, 210, 201, 0.655);
-  color: #ffffff;
-  cursor: pointer;
-}
-.falsoBoton {
-  display: inline-block;
-  background-color:  rgb(232, 210, 201);
+/* Botones */
+.btn {
+  background-color: rgb(232, 210, 201); 
   color: #ffffff;
   margin: 10px;
-  padding: 10px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   font-size: 1em;
   text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
+/* Hover efecto */
+button:hover, 
+.falsoBoton:hover {
+  background-color: rgb(200, 180, 172);
+  transform: scale(1.05);
+}
+
+/* Responsive */
 @media (max-width: 600px) {
   .container {
-    width: 90%;        /* más adaptable en móviles */
-    height: auto;      /* que se ajuste automáticamente */
+    width: 90%;
     padding: 1.5rem;
   }
 
-  input {
-    width: 100%;       /* ocupa todo el ancho del recuadro */
-    max-width: 250px;  /* pero no se va a infinito */
-  }
-
-  button {
+  input, button, .falsoBoton {
     width: 100%;
     max-width: 250px;
   }
 }
+
+
+
+
+
+

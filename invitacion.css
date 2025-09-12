@@ -149,6 +149,42 @@ section {
   color: #888;
 }
 
+.confirmacion {
+  min-height: 100vh;       /* ocupa toda la altura mínima de la pantalla */
+  padding: 2rem 1rem;      /* espacio interno */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* centra horizontalmente */
+  justify-content: center; /* centra verticalmente */
+  text-align: center;
+}
+
+.confirmacion .field {
+  margin: 1rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* centra el contenido */
+}
+
+.confirmacion .field div {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centra la fila completa */
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.confirmacion .field label {
+  margin: 0;
+}
+
+.confirmacion input[type="number"] {
+  width: 80px;
+  text-align: center;
+}
+
 
 
 .galeria {
@@ -197,14 +233,6 @@ section {
   overflow: hidden; /* oculta todo lo que se desborde */
 }
 
-.foto-Final {
-  max-width: 100vw; /* <-- clave para evitar scroll lateral */
-  max-height: 100vh;
-  width: auto;
-  height: auto;
-  display: block;
-}
-
 
 .footer {
   display: flex;
@@ -213,10 +241,13 @@ section {
   align-items: center;
   text-align: center;
   padding: 1rem;
+  font-size: 0.8rem;
+  color: white;
 }
 
 .footer a {
   text-decoration: none;
+  color: white;
 }
 
 
@@ -224,43 +255,53 @@ section {
   background-color: #ffffff;
 }
 #frase {
-  background-color: #e8d2c9;
-}
-#dia {
-  background-color: #ffffff;
-}
-#ceremonia {
-  background-color: #f2e3de;
-}
-#recepcion {
   background-color: #f4e8e2;
 }
-#ubicacion {
+#dia {
   background-color: #f2e3de;
 }
-#historia {
+#ceremonia {
+  background-color: #e8d2c9;
+}
+#recepcion {
+  background-color: #f2e3de;
+}
+#ubicacion {
+  background-color: #f4e8e2;
+}
+#bus{
   background-color: #ffffff;
 }
-#dresscode {
+#ceremonia-Civil{
+  background-color: #f4e8e2;
+}
+#historia {
   background-color: #f2e3de;
 }
+#dresscode {
+  background-color: #e8d2c9;
+}
 #regalos {
+  background-color: #f2e3de;
+}
+#galeria {
   background-color: #f4e8e2;
 }
 #confirmacion {
+  background-color: #ffff;
+}
+#drive{
+  background-color:#f4e8e2 ;
+}
+
+#fotoFinal{
   background-color: #f2e3de;
 }
-#fotoFinal{
-  background-color: #f4e8e2;
-}
 #fraseFinal{
-  background-color: #f4e8e2;
+  background-color: #e8d2c9;
 }
 #footer {
-  background-color: #e8d2c9;
-  font-size: 0.8rem;
-  color: #555;
-  padding: 0.5rem;
+  background-color: #f2e3de;
 }
 /* Estado inicial (fuera de pantalla y oculto) */
 section {

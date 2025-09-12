@@ -42,6 +42,14 @@ document.getElementById('form').addEventListener('submit', function(event) {
   // Guardamos las preferencias y cantidades en el campo oculto
   document.getElementById('preferencias_cantidades').value = preferenciasTexto;
 
+  // 🔹 Procesar momentos seleccionados
+  const momentos = document.querySelectorAll('input[name="momentos[]"]:checked');
+  let momentosTexto = "";
+  momentos.forEach(m => {
+    momentosTexto += `${m.value}\n`;
+  });
+  document.getElementById('momentos_confirmados').value = momentosTexto;
+
   // Enviar formulario con EmailJS
   btn.value = 'Enviando...';
   const serviceID = 'service_8i7z85g';
