@@ -326,3 +326,38 @@ section.izquierda.aparece {
   opacity: 1;
   transform: translateX(0);
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+section.derecha,
+section.izquierda {
+  max-width: 100vw;      /* no se pase del ancho de la pantalla */
+  overflow-x: hidden;    /* asegura que los hijos no generen scroll */
+  will-change: transform; /* ayuda al navegador con animaciones */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.contenido{
+  overflow-x: hidden;
+}
+@media (max-width: 600px) {
+  section.derecha { transform: translateX(30px); }
+  section.izquierda { transform: translateX(-30px); }
+}
+.boton-carrusel svg {
+  fill: #333;
+  width: 2rem;
+  height: 2rem;
+}
+
+.boton-carrusel:hover svg {
+  fill: #888;
+}
