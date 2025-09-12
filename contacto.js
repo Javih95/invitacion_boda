@@ -1,5 +1,5 @@
 const btn = document.getElementById('button');
-
+const API_URL = "https://apibodas.onrender.com";
 // Habilitar/deshabilitar input de cantidad según checkbox
 document.querySelectorAll('input[name="preferencias[]"]').forEach(checkbox => {
   checkbox.addEventListener('change', () => {
@@ -8,7 +8,7 @@ document.querySelectorAll('input[name="preferencias[]"]').forEach(checkbox => {
   });
 });
 
-document.getElementById('form').addEventListener('submit', function(event) {
+document.getElementById('form').addEventListener('submit', function (event) {
   event.preventDefault();
 
   const checkboxes = document.querySelectorAll('input[name="preferencias[]"]');
@@ -56,9 +56,25 @@ document.getElementById('form').addEventListener('submit', function(event) {
   const templateID = 'template_sjchv85';
 
   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
+    .then(async () => {
       btn.value = 'Confirmar';
       alert('¡Confirmación enviada!');
+      try {
+        const idGrupo = document.getElementById("user_grupo").value;
+        await fetch(`${API_URL}/api/confirmar`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            idGrupo,
+            confirmacion: "CONFIRMADO ✅",
+            preferencias: preferenciasTexto,
+            momentos: momentosTexto
+          })
+        });
+      } catch (err) {
+        console.error("Error enviando confirmación al API:", err);
+      }
+
     }, (err) => {
       btn.value = 'Confirmar';
       alert(JSON.stringify(err));

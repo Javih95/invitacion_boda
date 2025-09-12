@@ -261,6 +261,14 @@
     </script>
 
 </body>
+<script>
+  window.addEventListener("load", () => {
+    fetch("https://tu-api.onrender.com/api/ping")
+      .then(() => console.log("Servidor despierto ✅"))
+      .catch(() => console.log("No se pudo despertar el servidor 😴"));
+  });
+</script>
+
 <script src="contador.js"></script>
 <script src="carrusel.js"></script>
 <script>
